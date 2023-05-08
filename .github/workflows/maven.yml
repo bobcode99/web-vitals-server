@@ -36,7 +36,7 @@ jobs:
       with:
         name: jarFiles
         path: |
-          ./target/web-vitals-server-1.0.0-SNAPSHOT-runner.jar
+          ./target/*.jar
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
@@ -58,6 +58,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            ./target/web-vitals-server-1.0.0-SNAPSHOT-runner.jar
+            ./*.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
