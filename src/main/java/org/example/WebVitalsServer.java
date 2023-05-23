@@ -40,4 +40,10 @@ public class WebVitalsServer {
         mapObj.put(id, webVitalsResultList);
         return Response.ok("{\"status\": \"success\"}").build();
     }
+    @DELETE
+    @Path("/{id}")
+    public Response deleteId(@PathParam("id") String id) {
+        mapObj.remove(id);
+        return Response.ok("{\"status\": \"success delete\"}").build();
+    }
 }
